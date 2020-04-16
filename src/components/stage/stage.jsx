@@ -80,12 +80,12 @@ const StageComponent = props => {
                         stageWidth={stageDimensions.width}
                     />
                 </Box>
-                {isStarted ? null : (
+                {/* {isStarted ? null : (
                     <GreenFlagOverlay
                         className={styles.greenFlagOverlay}
                         wrapperClass={styles.greenFlagOverlayWrapper}
                     />
-                )}
+                )} */}
                 {isColorPicking && colorInfo ? (
                     <Box className={styles.colorPickerWrapper}>
                         <Loupe colorInfo={colorInfo} />
