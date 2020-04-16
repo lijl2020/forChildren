@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { compose } from 'redux';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-
 import AppStateHOC from '../lib/app-state-hoc.jsx';
 import GUI from '../containers/gui.jsx';
 import HashParserHOC from '../lib/hash-parser-hoc.jsx';
 import log from '../lib/log.js';
+import PCNewsBlock from "./home.jsx";
 require('../myprojects/gate-config');
 
 const onClickLogo = () => {
@@ -24,11 +24,6 @@ const handleTelemetryModalOptIn = () => {
 const handleTelemetryModalOptOut = () => {
     log('User opted out of telemetry');
 };
-const clickFun = (id) => {
-    global.constants.currentGate  = id;
-    console.log('clickFun id:'+global.constants.currentGate);
-    window.location = 'http://localhost:8080/#/' + id;
-}
 
 /*
  * Render the GUI playground. This is a separate function because importing anything
@@ -71,7 +66,6 @@ export default appTarget => {
         // important: this is checking whether `simulateScratchDesktop` is truthy, not just defined!
         simulateScratchDesktop ?
             <div>
-                {console.log(simulateScratchDesktop)}
                 <WrappedGui
                     canEditTitle
                     isScratchDesktop
@@ -83,25 +77,13 @@ export default appTarget => {
                 />
             </div>
             :
-            <div>
-                {console.log(simulateScratchDesktop)}
-                {/* <WrappedGui
-                    canEditTitle
-                    backpackVisible
-                    showComingSoon
-                    backpackHost={backpackHost}
-                    canSave={false}
-                    onClickLogo={onClickLogo}
-                /> */}
-                <HashRouter>
-                    <Switch>
-                        <Route exact path="/gate1" component={() => <WrappedGui />} />
-                        <Route exact path="/gate2" component={() => <WrappedGui />} />
-                    </Switch>
-                </HashRouter>
-                <button onClick={() => clickFun('gate1')}>第一关</button>
-                <button onClick={() => clickFun('gate2')}>第二关</button>
-            </div>
+            <HashRouter>
+                <Switch>
+                    <Route exact path="/" component={() => <PCNewsBlock />} />
+                    <Route exact path="/gate1" component={() => <WrappedGui />} />
+                    <Route exact path="/gate2" component={() => <WrappedGui />} />
+                </Switch>
+            </HashRouter>
         ,
         appTarget);
 };

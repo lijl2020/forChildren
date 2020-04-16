@@ -1,3 +1,12 @@
+/*
+ * @Descripttion: 
+ * @msg: 
+ * @version: 1.0
+ * @Author: Ling
+ * @Date: 2020-03-31 22:16:29
+ * @LastEditors: Ling
+ * @LastEditTime: 2020-04-15 21:48:21
+ */
 import keyMirror from 'keymirror';
 
 /**
@@ -43,8 +52,8 @@ STAGE_DISPLAY_SCALES[STAGE_DISPLAY_SIZES.largeConstrained] = 0.85; // large mode
 STAGE_DISPLAY_SCALES[STAGE_DISPLAY_SIZES.small] = 0.5; // small mode, regardless of browser size
 
 export default {
-    standardStageWidth: 480,
-    standardStageHeight: 360,
+    standardStageWidth: document.getElementsByTagName("html")[0].clientWidth / 2,
+    standardStageHeight: (document.getElementsByTagName("html")[0].clientWidth / 2) * 0.52,
     fullSizeMinWidth: 1096,
     fullSizePaintMinWidth: 1250
 };

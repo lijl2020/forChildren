@@ -120,6 +120,10 @@ const closeTipsLibrary = function () {
 const closeConnectionModal = function () {
     return closeModal(MODAL_CONNECTION);
 };
+const pageToHome = function(){
+    window.location.href = "/#"
+}
+
 export {
     reducer as default,
     initialState as modalsInitialState,
@@ -144,5 +148,6 @@ export {
     closeSoundRecorder,
     closeTelemetryModal,
     closeTipsLibrary,
-    closeConnectionModal
+    closeConnectionModal,
+    pageToHome
 };
