@@ -25,16 +25,16 @@ global.gateConfig = {
         midCheckPointNum:1,
         checkPointList:[
             {
-                leftTop:{x:53, y:-7},
-                rightTop:{x:91, y:-7},
-                rightBottom:{x:91, y:-43},
-                leftBottom:{x:53, y:-43}
+                leftTop:{x:-30, y:-46},
+                rightTop:{x:0, y:-46},
+                rightBottom:{x:0, y:-76},
+                leftBottom:{x:-30, y:-76}
             },
             {
-                leftTop:{x:50, y:97},
-                rightTop:{x:94, y:97},
-                rightBottom:{x:94, y:53},
-                leftBottom:{x:50, y:53}
+                leftTop:{x:70, y:-116},
+                rightTop:{x:100, y:-116},
+                rightBottom:{x:100, y:-146},
+                leftBottom:{x:70, y:-146}
             }
         ]
     }

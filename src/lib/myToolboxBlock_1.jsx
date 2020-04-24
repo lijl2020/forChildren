@@ -111,7 +111,7 @@ const myToolboxBlock_1 = function (isStage, targetId, categoriesXML = [],
 
     const everything = [
         xmlOpen,
-        motionXML, gap,
+        //motionXML, gap,
         eventsXML, gap,
         controlXML, gap,
     ];
